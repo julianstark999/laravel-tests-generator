@@ -2,9 +2,9 @@
 
 namespace JulianStark999\LaravelTestsGenerator;
 
+use Julianstark999\LaravelTestsGenerator\Commands\LaravelTestsGeneratorCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Julianstark999\LaravelTestsGenerator\Commands\LaravelTestsGeneratorCommand;
 
 class LaravelTestsGeneratorServiceProvider extends PackageServiceProvider
 {
