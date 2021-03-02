@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Skeleton\Commands;
+namespace JulianStark999\LaravelTestsGenerator\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelTestsGeneratorCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-tests-generator';
 
     public $description = 'My command';
 
