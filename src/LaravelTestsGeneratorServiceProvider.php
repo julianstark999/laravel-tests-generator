@@ -2,7 +2,7 @@
 
 namespace JulianStark999\LaravelTestsGenerator;
 
-use Julianstark999\LaravelTestsGenerator\Commands\LaravelTestsGeneratorCommand;
+use JulianStark999\LaravelTestsGenerator\Commands\LaravelTestsGeneratorCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -18,8 +18,8 @@ class LaravelTestsGeneratorServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-tests-generator')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel_tests_generator_table')
-            ->hasCommand(LaravelTestsGeneratorCommand::class);
+            ->hasCommands([
+                LaravelTestsGeneratorCommand::class,
+            ]);
     }
 }

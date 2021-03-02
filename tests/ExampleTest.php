@@ -1,6 +1,6 @@
 <?php
 
-namespace Julianstark999\LaravelTestsGenerator\Tests;
+namespace JulianStark999\LaravelTestsGenerator\Tests;
 
 class ExampleTest extends TestCase
 {

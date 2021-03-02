@@ -11,7 +11,7 @@
          verbose="true"
 >
     <testsuites>
-        <testsuite name="Julianstark999 Test Suite">
+        <testsuite name="laravel-tests-generator">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

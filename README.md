@@ -27,13 +27,13 @@ composer require julianstark999/laravel-tests-generator
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Julianstark999\LaravelTestsGenerator\LaravelTestsGeneratorServiceProvider" --tag="laravel-tests-generator-migrations"
+php artisan vendor:publish --provider="JulianStark999\LaravelTestsGenerator\LaravelTestsGeneratorServiceProvider" --tag="laravel-tests-generator-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Julianstark999\LaravelTestsGenerator\LaravelTestsGeneratorServiceProvider" --tag="laravel-tests-generator-config"
+php artisan vendor:publish --provider="JulianStark999\LaravelTestsGenerator\LaravelTestsGeneratorServiceProvider" --tag="laravel-tests-generator-config"
 ```
 
 This is the contents of the published config file:
@@ -46,8 +46,8 @@ return [
 ## Usage
 
 ```php
-$laravel-tests-generator = new Julianstark999\LaravelTestsGenerator();
-echo $laravel-tests-generator->echoPhrase('Hello, Julianstark999!');
+$laravel-tests-generator = new JulianStark999\LaravelTestsGenerator();
+echo $laravel-tests-generator->echoPhrase('Hello, JulianStark999!');
 ```
 
 ## Testing
