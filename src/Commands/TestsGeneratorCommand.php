@@ -7,19 +7,27 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 
-class LaravelTestsGeneratorCommand extends Command
+class TestsGeneratorCommand extends Command
 {
-    public $signature = 'laravel-tests-generator {--dir=*}';
+    public $signature = 'tests-generator {--dir=*}';
 
-    public $description = 'My command';
+    public $description = 'Check and create missing tests';
 
     public function handle(): void
     {
+        $this->info('Check directories');
+
         $directories = $this->getDirectories();
 
+        $this->info('Processing');
+
         $directories->each(function ($dir) {
-            $this->processDirectory($dir);
+            $this->info($dir);
+
+            $this->processDirectory(app_path($dir));
         });
+
+        $this->info('Finished');
     }
 
     private function getDirectories(): Collection
@@ -31,7 +39,7 @@ class LaravelTestsGeneratorCommand extends Command
 
         if (! count($optionDirs)) {
             foreach ($configuredDirectories as $item) {
-                $directories->push(app_path($item));
+                $directories->push($item);
             }
 
             return $directories;
@@ -42,19 +50,18 @@ class LaravelTestsGeneratorCommand extends Command
                 return;
             }
 
-            $directories->push(app_path($configuredDirectories[$key]));
+            $directories->push($configuredDirectories[$key]);
         });
 
         return $directories;
     }
 
-    private function processDirectory(string $path)
+    private function processDirectory(string $path): void
     {
+        // check if directory exists
         if (! File::exists($path)) {
             return;
         }
-
-        $this->info($path);
 
         $relativePath = $this->getRelativeNamespace($path);
         $files = File::allFiles($path);
@@ -67,13 +74,17 @@ class LaravelTestsGeneratorCommand extends Command
                 return;
             }
 
+            $testName = sprintf(
+                '%s\%sTest',
+                $relativePath,
+                $className
+            );
+
             $this->callSilently('make:test', [
-                'name' => sprintf(
-                    '%s\%sTest',
-                    $relativePath,
-                    $className
-                ),
+                'name' => $testName,
             ]);
+
+            $this->info('    '.$testName);
         });
     }
 
