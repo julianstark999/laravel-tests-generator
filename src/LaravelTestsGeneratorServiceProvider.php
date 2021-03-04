@@ -19,7 +19,7 @@ class LaravelTestsGeneratorServiceProvider extends PackageServiceProvider
             ->name('laravel-tests-generator')
             ->hasConfigFile()
             ->hasCommands([
-                              TestsGeneratorCommand::class,
+                TestsGeneratorCommand::class,
             ]);
     }
 }

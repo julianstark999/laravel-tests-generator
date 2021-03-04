@@ -21,7 +21,7 @@ class TestsGeneratorCommand extends Command
 
         $this->info('Processing');
 
-        $directories->each(function ($dir) {
+        $directories->each(function (string $dir): void {
             $this->info($dir);
 
             $this->processDirectory(app_path($dir));
@@ -45,7 +45,7 @@ class TestsGeneratorCommand extends Command
             return $directories;
         }
 
-        collect($optionDirs)->each(function ($key) use ($configuredDirectories, $directories) {
+        collect($optionDirs)->each(function (string $key) use ($configuredDirectories, $directories): void {
             if (! Arr::has($configuredDirectories, $key)) {
                 return;
             }
@@ -66,7 +66,7 @@ class TestsGeneratorCommand extends Command
         $relativePath = $this->getRelativeNamespace($path);
         $files = File::allFiles($path);
 
-        collect($files)->each(function ($file) use ($relativePath) {
+        collect($files)->each(function ($file) use ($relativePath): void {
             $fileName = $file->getRelativePathname();
             $className = str_replace('.php', '', $fileName);
 
