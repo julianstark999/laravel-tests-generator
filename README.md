@@ -1,4 +1,4 @@
-<p align="center"><img src="https://banners.beyondco.de/laravel-model-iid.png?theme=light&packageManager=composer+require&packageName=julianstark999%2Flaravel-tests-generator&pattern=circuitBoard&style=style_2&description=&md=1&showWatermark=0&fontSize=100px&images=database&widths=350&heights=350" alt="Social Card of Laravel Tests Generator"></p>
+<p align="center"><img src="https://banners.beyondco.de/laravel-tests-generator.png?theme=light&packageManager=composer+require&packageName=julianstark999%2Flaravel-tests-generator&pattern=circuitBoard&style=style_2&description=&md=1&showWatermark=0&fontSize=100px&images=database&widths=350&heights=350" alt="Social Card of Laravel Tests Generator"></p>
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/julianstark999/laravel-tests-generator.svg?style=flat-square)](https://packagist.org/packages/julianstark999/laravel-tests-generator)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/julianstark999/laravel-tests-generator/run-tests?label=tests)](https://github.com/julianstark999/laravel-tests-generator/actions?query=workflow%3ATests+branch%3Amaster)
