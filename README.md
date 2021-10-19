@@ -60,7 +60,7 @@ The `tests-generator` command generates missing tests
 php artisan tests-generator {--dir=*}
 
 # example
-php artisan iid:generate controllers 
+php artisan tests-generator --dir=controllers 
 ```
 **See the configuration file example or publish it yourself for all available dirs**
 
